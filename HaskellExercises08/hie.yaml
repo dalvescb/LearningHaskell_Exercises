@@ -1,0 +1,16 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "HaskellExercises08:lib"
+
+    - path: "./app/Main.hs"
+      component: "HaskellExercises08:exe:HaskellExercises08-exe"
+
+    - path: "./app/MarkClassList.hs"
+      component: "HaskellExercises08:exe:HaskellExercises08-exe"
+
+    - path: "./app/Paths_HaskellExercises08.hs"
+      component: "HaskellExercises08:exe:HaskellExercises08-exe"
+
+    - path: "./test"
+      component: "HaskellExercises08:test:HaskellExercises08-test"

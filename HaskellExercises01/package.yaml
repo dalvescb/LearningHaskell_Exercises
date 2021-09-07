@@ -1,0 +1,50 @@
+name:                HaskellExercises01
+version:             0.1.0.0
+github:              "dalvescb/HaskellExercises01"
+license:             BSD3
+author:              "Curtis D'Alves"
+maintainer:          "curtis.dalves@gamil.com"
+copyright:           "(c) Curtis D'Alves 2020"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/dalvescb/HaskellExercises01#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- QuickCheck
+- hspec
+
+library:
+  source-dirs: src
+
+executables:
+  HaskellExercises01-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - HaskellExercises01
+
+tests:
+  HaskellExercises01-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - HaskellExercises01

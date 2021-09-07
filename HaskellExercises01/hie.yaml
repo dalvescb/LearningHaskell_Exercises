@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "HaskellExercises01:lib"
+
+    - path: "./app/Main.hs"
+      component: "HaskellExercises01:exe:HaskellExercises01-exe"
+
+    - path: "./app/Paths_HaskellExercises01.hs"
+      component: "HaskellExercises01:exe:HaskellExercises01-exe"
+
+    - path: "./test"
+      component: "HaskellExercises01:test:HaskellExercises01-test"

@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           HaskellExercises08
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/dalvescb/HaskellExercises08#readme>
+homepage:       https://github.com/dalvescb/HaskellExercises08#readme
+bug-reports:    https://github.com/dalvescb/HaskellExercises08/issues
+author:         Curtis D'Alves
+maintainer:     curtis.dalves@gamil.com
+copyright:      (c) Curtis D'Alves 2020
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/dalvescb/HaskellExercises08
+
+library
+  exposed-modules:
+      Exercises08
+  other-modules:
+      Paths_HaskellExercises08
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
+
+executable HaskellExercises08-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_HaskellExercises08
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HaskellExercises08
+    , QuickCheck
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
+
+test-suite HaskellExercises08-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_HaskellExercises08
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HaskellExercises08
+    , QuickCheck
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
