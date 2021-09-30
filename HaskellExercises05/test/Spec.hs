@@ -80,7 +80,7 @@ replicateProp1 :: Int -> Int -> Bool
 replicateProp1 n x =
   let
     repls = E5.replicate n x
-  in length repls == n
+  in (length repls == n) || (n < 0 && length repls == 0)
 
 -- | QuickCheck proposition for testing Exercises05.!!
 indexProp :: [Int] -> Int -> Bool
