@@ -29,7 +29,7 @@ macid = "TODO"
 -----------------------------------------------------------------------------------------------------------
 -- Implement the function split that takes a list and splits it in half and returns a tuple of the
 -- two halves, WITHOUT USING TAKE / DROP
--- NOTE when the list is uneven, the first list is one element larger than the second
+-- NOTE when the list is uneven, the second list is one element larger than the first
 -- NOTE^2 when using take / drop, although convenient, you introduce redundant computation. A more
 --        efficient implementation of this function can be done calling an auxilary function with
 --        different parameters that recurses through the list directly
@@ -62,7 +62,7 @@ mergeSort xs = error "TODO implement mergeSort"
 
 -- Exercise D
 -----------------------------------------------------------------------------------------------------------
--- Implement the function isSorted that tests if a list is sorted or not
+-- Implement the function sortProp that tests if a list is sorted or not
 -- NOTE you can use this with QuickCheck to test your mergSort function by calling
 --      quickCheck (sortProp . mergeSort)
 -----------------------------------------------------------------------------------------------------------
@@ -71,7 +71,8 @@ sortProp xs = error "TODO implement sortProp"
 
 -- Exercise E
 -----------------------------------------------------------------------------------------------------------
--- Implement the Prelude function isSorted that tests if a list is sorted or not
+-- Implement the Prelude function replicate that takes an Int n and a element and returns a list that
+-- replicates that element n times
 -----------------------------------------------------------------------------------------------------------
 replicate :: Int -> a -> [a]
 replicate n x = error "TODO implement replicate"
