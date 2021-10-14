@@ -96,6 +96,8 @@ main = hspec $ do
   describe "addSNat" $ do
     it "addSNat (intToSNat x) (intToSNat y) should be x+y" $ property $ addSNatProp
   describe "multSNat" $ do
+    it "multSNat (intToSNat x) (intToSNat y) should be x*y" $ property $ multSNatProp
+  describe "absSNat" $ do
     it "should always be Positive and not change the underlying Nat" $ property $ absSNatProp
   describe "negateSNat" $ do
     it "should flip the sign but keep the underlying Nat" $ property $ negateSNatProp
