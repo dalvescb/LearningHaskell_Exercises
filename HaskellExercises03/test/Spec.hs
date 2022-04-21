@@ -98,11 +98,11 @@ instance Arbitrary a => Arbitrary (E3.Tree a) where
 
 -- | QuickCheck proposition for testing Exercises03.isSearchTree
 isSearchTreeProp :: E3.Tree Int -> Bool
-isSearchTreeProp ts =
-  let
-    isSorted xs = and . map (\(x,y) -> x <= y) . zip xs $ tail xs
-    isSearch    = isSorted $ flatten ts
-  in isSearch == E3.isSearchTree ts
+isSearchTreeProp ts = isSearch (\x->True) ts == E3.isSearchTree ts
+  where
+    isSearch p (E3.Leaf x) = p x
+    isSearch p (E3.Node x t1 t2) =
+      p x && isSearch (<=x) t1 && isSearch (x<) t2
 
 -- | QuickCheck proposition for testing Exercises03.factors
 factorsProp :: Int -> Bool
