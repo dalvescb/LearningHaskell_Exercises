@@ -70,7 +70,18 @@ mult (Succ m) n = error "TODO implement mult"
 --       start by defining functions that test if a value is less/greater than all the values in a tree
 -----------------------------------------------------------------------------------------------------------
 isSearchTree :: Ord a => Tree a -> Bool
-isSearchTree tree = error "TODO implement isSearchTree"
+isSearchTree tree =
+  let
+    treeCompare cmp v0 (Leaf v) = v0 `cmp` v
+    treeCompare cmp v0 (Node v t0 t1) = v0 `cmp` v
+                                        && treeCompare cmp v0 t0
+                                        && treeCompare cmp v0 t1
+  in case tree of
+       (Node v t0 t1) -> treeCompare (>=) v t0
+                      && treeCompare (<) v t1
+                      && isSearchTree t0
+                      && isSearchTree t1
+       (Leaf v) -> True
 
 -- Exercise E
 -----------------------------------------------------------------------------------------------------------
