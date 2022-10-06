@@ -102,7 +102,7 @@ isSearchTreeProp ts =
   let
     isSorted xs = and . map (\(x,y) -> x <= y) . zip xs $ tail xs
     isSearch    = isSorted $ flatten ts
-  in isSearch == E3.isSearchTree ts
+  in E3.isSearchTree ts ==> isSearch
 
 -- | QuickCheck proposition for testing Exercises03.factors
 factorsProp :: Int -> Bool
